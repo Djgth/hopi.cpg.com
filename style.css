@@ -1221,3 +1221,20 @@ html {
 .sermon-audio::-webkit-media-controls-volume-slider {
   filter: invert(1); /* makes icons white for dark backgrounds */
 }
+/* Responsive sermon & gallery images */
+.sermon-section img,
+.gallery-section img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .sermon-section img,
+  .gallery-section img {
+    max-height: 180px;
+  }
+}
