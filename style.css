@@ -1238,3 +1238,61 @@ html {
     max-height: 180px;
   }
 }
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  /* Hero title */
+  .hero-title {
+    font-size: clamp(20px, 7.5vw, 32px);
+    letter-spacing: 0.4px;
+    padding: 4px 8px;
+  }
+
+  /* About section */
+  .about-section {
+    padding: 40px 16px;
+  }
+
+  /* Navbar */
+  .nav-links {
+    display: none; /* hide desktop links */
+  }
+
+  /* Activities */
+  .activities h2 {
+    font-size: 24px;
+  }
+
+  /* Departments grid */
+  .departments-grid {
+    grid-template-columns: 1fr; /* stack on small screens */
+  }
+
+  /* Contact wrapper */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sermon layout */
+  .sermon-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Sermon & gallery images */
+  .sermon-section img,
+  .gallery-section img {
+    width: 150px;        /* smaller square size */
+    height: 150px;
+    object-fit: cover;   /* crops nicely without distortion */
+    border-radius: 8px;  /* optional polish */
+    margin: 8px auto;
+  }
+
+  /* Background sections */
+  .hero-section,
+  .about-section {
+    background-size: cover;       /* fills screen proportionally */
+    background-position: center;  /* keeps focus centered */
+    background-repeat: no-repeat;
+  }
+}
