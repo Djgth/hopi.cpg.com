@@ -1054,190 +1054,52 @@ html {
   }
 }
 
-
 /* Sermons Section */
 .sermons {
-  padding: 80px 20px;
-  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #111, #222); /* subtle dark gradient */
+  color: #fff;
 }
 
 .sermons h2 {
-  font-size: 32px;
-  color: #ffcc00;
-  text-align: center;
-  text-transform: uppercase;
+  font-size: 2rem;
   margin-bottom: 10px;
+  color: #f4d03f; /* gold accent */
 }
 
 .sermons-intro {
-  text-align: center;
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 30px;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
-/* Filter Bar */
-.sermon-filter {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  max-width: 250px;
-  margin: 0 auto 40px;
-  text-align: center;
+.sermon-link-wrapper {
+  margin-top: 20px;
 }
 
-.sermon-filter label {
-  font-size: 16px;
-  color: #003366;
-  margin-bottom: 4px;
-}
-
-.sermon-filter input,
-.sermon-filter select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.sermon-filter select {
-  cursor: pointer;
-  transition: border-color 0.3s;
-}
-
-.sermon-filter select:focus {
-  border-color: #ffcc00;
-  outline: none;
-}
-
-/* Sermons List Layout */
-.sermons-list {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.sermon-item {
-  display: flex;
-  gap: 25px;
-  align-items: flex-start;
-  background: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.sermon-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
-}
-
-.sermon-thumb {
-  width: 180px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.sermon-details {
-  flex: 1;
-  text-align: left;
-}
-
-.sermon-date {
-  font-size: 14px;
-  color: #999;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.sermon-details h3 {
-  font-size: 22px;
-  color: #003366;
-  margin-bottom: 10px;
-}
-
-.sermon-details p {
-  font-size: 15px;
-  color: #555;
-  margin-bottom: 15px;
-}
-
-.sermon-details .btn {
+.sermon-link {
   display: inline-block;
-  padding: 10px 20px;
-  background: #ffcc00;
-  color: #000;
-  font-weight: bold;
+  padding: 12px 24px;
+  background-color: #0088cc; /* Telegram blue */
+  color: #fff;
   text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s;
-}
-
-.sermon-details .btn:hover {
-  background: #e6b800;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .sermon-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .sermon-thumb {
-    width: 100%;
-    height: auto;
-  }
-
-  .sermon-details {
-    text-align: center;
-  }
-}
-
-/* Audio Player Styling */
-.sermon-audio {
-  width: 100%;                  /* full width inside sermon card */
-  margin-top: 15px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.2); /* glass effect */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 5px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.sermon-audio::-webkit-media-controls-panel {
-  background: rgba(0,0,0,0.7); /* dark background */
-  border-radius: 10px;
-}
-
-.sermon-audio::-webkit-media-controls-play-button,
-.sermon-audio::-webkit-media-controls-volume-slider {
-  filter: invert(1); /* makes icons white for dark backgrounds */
-}
-/* Responsive sermon & gallery images */
-.sermon-section img,
-.gallery-section img {
-  width: 100%;
-  height: auto;
-  max-height: 250px;
-  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-@media (max-width: 768px) {
-  .sermon-section img,
-  .gallery-section img {
-    max-height: 180px;
-  }
+.sermon-link:hover {
+  background-color: #006699;
+  transform: translateY(-2px);
 }
+
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
   /* Hero title */
