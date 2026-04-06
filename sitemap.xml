@@ -9,20 +9,36 @@
 
   <!-- About page -->
   <url>
-    <loc>https://djgth.github.io/hopi.cpg.com/about</loc>
+    <loc>https://djgth.github.io/hopi.cpg.com/ABOUT</loc>
     <priority>0.8</priority>
   </url>
 
   <!-- Sermons page -->
   <url>
-    <loc>https://djgth.github.io/hopi.cpg.com/sermons</loc>
+    <loc>https://djgth.github.io/hopi.cpg.com/SERMONS</loc>
     <priority>0.9</priority>
   </url>
 
   <!-- Contact page -->
   <url>
-    <loc>https://djgth.github.io/hopi.cpg.com/contact</loc>
+    <loc>https://djgth.github.io/hopi.cpg.com/CONTACT</loc>
+    <priority>0.7</priority>
+  </url>
+  <!-- Gallery page page -->
+  <url>
+    <loc>https://djgth.github.io/hopi.cpg.com/GALLERY</loc>
     <priority>0.7</priority>
   </url>
 
+    <!-- Activities page -->
+  <url>
+    <loc>https://djgth.github.io/hopi.cpg.com/ACTIVITIES</loc>
+    <priority>0.7</priority>
+  </url>
+
+    <!-- Departments page -->
+  <url>
+    <loc>https://djgth.github.io/hopi.cpg.com/ACTIVITIES</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
