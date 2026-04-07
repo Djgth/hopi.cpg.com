@@ -1199,3 +1199,34 @@ html {
     max-width: 100%;          /* full width on mobile */
   }
 }
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  /* Sermon layout */
+  .sermon-item {
+    flex-direction: row;       /* keep items side by side */
+    justify-content: center;   /* center them horizontally */
+    align-items: flex-start;   /* align top edges */
+    text-align: left;          /* avoid forced centering */
+    gap: 12px;                 /* spacing between items */
+  }
+
+  /* Sermon & gallery images */
+  .sermon-section img,
+  .gallery-section img {
+    width: 120px;              /* smaller width for phones */
+    height: auto;              /* keep aspect ratio */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+.sermon-section {
+  display: flex;
+  overflow-x: auto;   /* enables horizontal scroll */
+  gap: 12px;
+  scroll-snap-type: x mandatory; /* optional smooth snapping */
+}
+
+.sermon-item {
+  flex: 0 0 auto;     /* prevents shrinking */
+  scroll-snap-align: start;
+}
