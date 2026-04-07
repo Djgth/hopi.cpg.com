@@ -1226,3 +1226,30 @@ html {
   }
 }
 
+/* Departments horizontal scroll */
+.departments-grid {
+  display: flex;
+  flex-wrap: nowrap;        /* keep items in one line */
+  overflow-x: auto;         /* enable horizontal scroll */
+  gap: 16px;                /* spacing between cards */
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+}
+
+.department-item {
+  flex: 0 0 auto;           /* prevent shrinking */
+  width: 200px;             /* fixed card width */
+  text-align: center;
+}
+/* Activities grid */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 16px;                             /* spacing between items */
+}
+
+.activity-item {
+  background: #111;        /* example styling */
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+}
