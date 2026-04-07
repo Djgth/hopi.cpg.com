@@ -1164,3 +1164,38 @@ html {
     background-repeat: no-repeat;
   }
 }
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  /* Example: shrink padding and font sizes */
+  .hero h1 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .hero h2 {
+    font-size: 16px;
+  }
+
+  .nav-links ul {
+    flex-direction: column;   /* stack nav links neatly */
+    gap: 10px;
+  }
+
+  .gallery-container {
+    gap: 8px;                 /* tighter spacing on mobile */
+  }
+
+  .gallery-item {
+    width: 150px;             /* smaller images for phone */
+    height: 120px;
+  }
+
+  .about-grid {
+    flex-direction: column;   /* stack About section cards */
+    gap: 20px;
+  }
+
+  .founder-card {
+    max-width: 100%;          /* full width on mobile */
+  }
+}
