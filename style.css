@@ -1201,32 +1201,28 @@ html {
 }
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  /* Sermon layout */
-  .sermon-item {
-    flex-direction: row;       /* keep items side by side */
-    justify-content: center;   /* center them horizontally */
-    align-items: flex-start;   /* align top edges */
-    text-align: left;          /* avoid forced centering */
+  /* Sermon section container */
+  .sermon-section {
+    display: flex;             /* enable flexbox */
+    flex-wrap: nowrap;         /* prevent wrapping */
+    overflow-x: auto;          /* allow horizontal scroll */
     gap: 12px;                 /* spacing between items */
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
   }
 
-  /* Sermon & gallery images */
-  .sermon-section img,
-  .gallery-section img {
-    width: 120px;              /* smaller width for phones */
-    height: auto;              /* keep aspect ratio */
+  /* Sermon items */
+  .sermon-item {
+    flex: 0 0 auto;            /* don’t shrink, keep width */
+    width: 200px;              /* fixed width per item */
+    text-align: center;
+  }
+
+  /* Sermon images */
+  .sermon-section img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 8px;
   }
 }
-.sermon-section {
-  display: flex;
-  overflow-x: auto;   /* enables horizontal scroll */
-  gap: 12px;
-  scroll-snap-type: x mandatory; /* optional smooth snapping */
-}
 
-.sermon-item {
-  flex: 0 0 auto;     /* prevents shrinking */
-  scroll-snap-align: start;
-}
