@@ -1,3 +1,15 @@
+:root {
+  --bg-color: #ffffff;   /* light background */
+  --text-color: #000000; /* light text */
+  --accent-color: #ffcc00;
+}
+
+.dark-mode {
+  --bg-color: #000000;   /* dark background */
+  --text-color: #ffffff; /* dark text */
+  --accent-color: #ffcc00;
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -37,6 +49,28 @@
   font-size: 16px;
   font-weight: bold;
   color: #fff;
+}
+
+/* Theme Toggle Button - ADDED */
+.theme-toggle {
+  background: none;
+  border: 2px solid #ffcc00;
+  color: #ffcc00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  margin-right: 15px;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 204, 0, 0.2);
+  transform: rotate(20deg);
 }
 
 /* Navigation */
@@ -122,6 +156,7 @@
   -webkit-text-fill-color: #fff;
   color: #fff;
   text-shadow: 0 6px 20px rgba(0,0,0,0.55);
+
 }
 
 /* Small screens */
@@ -153,8 +188,14 @@
 .welcome {
   text-align: center;
   padding: 60px 20px;
-  background: #ffffff;
+  background: var(--bg-color);
   color: #003366;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .welcome {
+  background: var(--bg-color);
+  color: #ffffff;
 }
 
 .welcome-text h2 {
@@ -177,13 +218,22 @@
   color: #555;
 }
 
+body.dark-mode .welcome-text p {
+  color: #d0d0d0;
+}
+
 /* Info Panels */
 .info-panels {
   display: flex;
   justify-content: center;
   gap: 30px;
   padding: 60px 40px;
-  background: #ffffff;
+  background: var(--bg-color);
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .info-panels {
+  background: var(--bg-color);
 }
 
 .panel {
@@ -195,6 +245,10 @@
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .panel {
+  background: #555555;
 }
 
 .panel:hover {
@@ -214,10 +268,18 @@
   color: #003366;
 }
 
+body.dark-mode .panel h3 {
+  color: #ffcc00;
+}
+
 .panel p {
   font-size: 14px;
   margin-bottom: 15px;
   color: #555;
+}
+
+body.dark-mode .panel p {
+  color: #d0d0d0;
 }
 
 .panel-btn {
@@ -474,6 +536,12 @@
   background: linear-gradient(180deg, #fbfbfd 0%, #f3f6fb 100%);
   color: #1f2937;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .about-section {
+  background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #e0e0e0;
 }
 
 .about-container {
@@ -495,11 +563,19 @@
   text-transform: none;
 }
 
+body.dark-mode .about-title {
+  color: #ffcc00;
+}
+
 .about-tagline {
   color: #6b7280;
   font-size: 15px;
   margin: 0 auto;
   max-width: 760px;
+}
+
+body.dark-mode .about-tagline {
+  color: #b0b0b0;
 }
 
 /* Grid layout */
@@ -516,6 +592,12 @@
   border-radius: 12px;
   padding: 26px;
   box-shadow: 0 8px 30px rgba(11, 37, 69, 0.06);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .about-card {
+  background: #2d2d2d;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Statement card */
@@ -524,6 +606,10 @@
   line-height: 1.6;
   color: #0b2545;
   margin-bottom: 18px;
+}
+
+body.dark-mode .about-statement .lead {
+  color: #ffffff;
 }
 
 .about-columns {
@@ -535,9 +621,17 @@
   line-height: 1.7;
 }
 
+body.dark-mode .about-columns {
+  color: #d0d0d0;
+}
+
 .about-statement .accent {
   color: #0b3a66;
   font-weight: 600;
+}
+
+body.dark-mode .about-statement .accent {
+  color: #ffcc00;
 }
 
 .about-statement .vision {
@@ -546,6 +640,11 @@
   color: #374151;
   border-top: 1px dashed rgba(11,37,69,0.06);
   padding-top: 14px;
+}
+
+body.dark-mode .about-statement .vision {
+  color: #d0d0d0;
+  border-top-color: rgba(255, 204, 0, 0.2);
 }
 
 /* Founder card */
@@ -576,10 +675,18 @@
   margin: 0 0 4px 0;
 }
 
+body.dark-mode .founder-name {
+  color: #ffffff;
+}
+
 .founder-role {
   font-size: 13px;
   color: #6b7280;
   margin-bottom: 10px;
+}
+
+body.dark-mode .founder-role {
+  color: #b0b0b0;
 }
 
 .founder-text {
@@ -589,6 +696,10 @@
   margin-bottom: 12px;
 }
 
+body.dark-mode .founder-text {
+  color: #d0d0d0;
+}
+
 .founder-quote {
   font-style: italic;
   color: #0b3a66;
@@ -596,6 +707,10 @@
   padding-left: 12px;
   margin: 0;
   font-size: 14px;
+}
+
+body.dark-mode .founder-quote {
+  color: #ffcc00;
 }
 
 /* Decorative accent for balance */
@@ -657,8 +772,13 @@
 /* Gallery Section */
 .gallery {
   padding: 60px 20px;
-  background: #fff;
+  background: var(--bg-color);
   text-align: center;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .gallery {
+  background: var(--bg-color);
 }
 
 .gallery h2 {
@@ -700,6 +820,7 @@
 .gallery-item:hover {
   transform: scale(1.03);
 }
+
 
 
 
@@ -814,8 +935,13 @@ html {
 /* Activities Section */
 .activities {
   padding: 60px 20px;
-  background: #f9f9f9;
+  background: var(--card-bg);
   text-align: center;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .activities {
+  background: #2d2d2d;
 }
 
 .activities h2 {
@@ -839,6 +965,10 @@ html {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+body.dark-mode .activity-card {
+  background: #2d2d2d;
+}
+
 .activity-card img {
   width: 100%;
   height: 180px;
@@ -851,10 +981,18 @@ html {
   margin: 15px 0 10px;
 }
 
+body.dark-mode .activity-card h3 {
+  color: #ffcc00;
+}
+
 .activity-card p {
   font-size: 14px;
   color: #555;
   padding: 0 15px 20px;
+}
+
+body.dark-mode .activity-card p {
+  color: #d0d0d0;
 }
 
 .activity-card:hover {
@@ -871,8 +1009,13 @@ html {
 /* Departments Section */
 .departments {
   padding: 60px 20px;
-  background: #f9f9f9;
+  background: var(--card-bg);
   text-align: center;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .departments {
+  background: #2d2d2d;
 }
 
 .departments h2 {
@@ -896,6 +1039,10 @@ html {
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .department {
+  background: #2d2d2d;
 }
 
 .department:hover {
@@ -924,10 +1071,18 @@ html {
   margin-bottom: 10px;
 }
 
+body.dark-mode .department-text h3 {
+  color: #ffcc00;
+}
+
 .department-text p {
   font-size: 14px;
   color: #555;
   line-height: 1.5;
+}
+
+body.dark-mode .department-text p {
+  color: #d0d0d0;
 }
 
 /* Mobile adjustments */
@@ -940,6 +1095,11 @@ html {
 .contact {
   padding: 80px 20px;
   background: linear-gradient(135deg, #fdfdfd, #f4f4f9);
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .contact {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
 }
 
 .contact-header {
@@ -959,6 +1119,10 @@ html {
   color: #555;
 }
 
+body.dark-mode .contact-header p {
+  color: #d0d0d0;
+}
+
 .contact-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -972,11 +1136,20 @@ html {
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .contact-form {
+  background: #2d2d2d;
 }
 
 .contact-form h3 {
   font-size: 22px;
   color: #003366;
+}
+
+body.dark-mode .contact-form h3 {
+  color: #ffcc00;
   margin-bottom: 20px;
 }
 
@@ -991,6 +1164,10 @@ html {
   display: block;
 }
 
+body.dark-mode .contact-form label {
+  color: #ffffff;
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -999,6 +1176,15 @@ html {
   border-radius: 6px;
   font-size: 14px;
   transition: border-color 0.3s;
+  background: #fff;
+  color: #000;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+  background: #1a1a1a;
+  color: #ffffff;
+  border-color: #444;
 }
 
 .contact-form input:focus,
@@ -1060,6 +1246,28 @@ html {
   }
 }
 
+
+/* Sermons Section */
+.sermons {
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.sermons h2 {
+  font-size: 32px;
+  color: #ffcc00;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.sermons-intro {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
 /* Sermons Section */
 .sermons {
   padding: 60px 20px;
@@ -1108,124 +1316,35 @@ html {
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  /* Hero title */
-  .hero-title {
-    font-size: clamp(20px, 7.5vw, 32px);
-    letter-spacing: 0.4px;
-    padding: 4px 8px;
-  }
-
-  /* About section */
-  .about-section {
-    padding: 40px 16px;
-  }
-
-  /* Navbar */
-  .nav-links {
-    display: none; /* hide desktop links */
-  }
-
-  /* Activities */
-  .activities h2 {
-    font-size: 24px;
-  }
-
-  /* Departments grid */
-  .departments-grid {
-    grid-template-columns: 1fr; /* stack on small screens */
-  }
-
-  /* Contact wrapper */
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-  }
-
   /* Sermon layout */
   .sermon-item {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;       /* keep items side by side */
+    justify-content: center;   /* center them horizontally */
+    align-items: flex-start;   /* align top edges */
+    text-align: left;          /* avoid forced centering */
+    gap: 12px;                 /* spacing between items */
   }
 
   /* Sermon & gallery images */
   .sermon-section img,
   .gallery-section img {
-    width: 150px;        /* smaller square size */
-    height: 150px;
-    object-fit: cover;   /* crops nicely without distortion */
-    border-radius: 8px;  /* optional polish */
-    margin: 8px auto;
-  }
-
-  /* Background sections */
-  .hero-section,
-  .about-section {
-    background-size: cover;       /* fills screen proportionally */
-    background-position: center;  /* keeps focus centered */
-    background-repeat: no-repeat;
-  }
-}
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  /* Example: shrink padding and font sizes */
-  .hero h1 {
-    font-size: 20px;
-    line-height: 1.4;
-  }
-
-  .hero h2 {
-    font-size: 16px;
-  }
-
-  .nav-links ul {
-    flex-direction: column;   /* stack nav links neatly */
-    gap: 10px;
-  }
-
-  .gallery-container {
-    gap: 8px;                 /* tighter spacing on mobile */
-  }
-
-  .gallery-item {
-    width: 150px;             /* smaller images for phone */
-    height: 120px;
-  }
-
-  .about-grid {
-    flex-direction: column;   /* stack About section cards */
-    gap: 20px;
-  }
-
-  .founder-card {
-    max-width: 100%;          /* full width on mobile */
-  }
-}
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  /* Sermon section container */
-  .sermon-section {
-    display: flex;             /* enable flexbox */
-    flex-wrap: nowrap;         /* prevent wrapping */
-    overflow-x: auto;          /* allow horizontal scroll */
-    gap: 12px;                 /* spacing between items */
-    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
-  }
-
-  /* Sermon items */
-  .sermon-item {
-    flex: 0 0 auto;            /* don’t shrink, keep width */
-    width: 200px;              /* fixed width per item */
-    text-align: center;
-  }
-
-  /* Sermon images */
-  .sermon-section img {
-    width: 100%;
-    height: auto;
+    width: 120px;              /* smaller width for phones */
+    height: auto;              /* keep aspect ratio */
     object-fit: cover;
     border-radius: 8px;
   }
 }
+.sermon-section {
+  display: flex;
+  overflow-x: auto;   /* enables horizontal scroll */
+  gap: 12px;
+  scroll-snap-type: x mandatory; /* optional smooth snapping */
+}
 
+.sermon-item {
+  flex: 0 0 auto;     /* prevents shrinking */
+  scroll-snap-align: start;
+}
 /* Departments horizontal scroll */
 .departments-grid {
   display: flex;
@@ -1252,4 +1371,122 @@ html {
   padding: 12px;
   border-radius: 8px;
   text-align: center;
+}
+
+
+
+
+/* Contact Details - DARK MODE ADDED */
+.contact-details {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .contact-details {
+  background: #2d2d2d;
+}
+
+.contact-details h3 {
+  font-size: 18px;
+  color: #003366;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+body.dark-mode .contact-details h3 {
+  color: #ffcc00;
+}
+
+.contact-details p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+body.dark-mode .contact-details p {
+  color: #d0d0d0;
+}
+
+/* Sermons Section - DARK MODE ADDED */
+.sermons {
+  padding: 60px 20px;
+  background: var(--bg-color);
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .sermons {
+  background: var(--bg-color);
+}
+
+.sermons h2 {
+  font-size: 28px;
+  color: #ffcc00;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.sermons-intro {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.dark-mode .sermons-intro {
+  color: #d0d0d0;
+}
+
+.sermon-link {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #ffcc00;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.sermon-link:hover {
+  background: #e6b800;
+  transform: translateY(-2px);
+}
+
+/* Site Footer - DARK MODE ADDED */
+.site-footer {
+  background: #000;
+  color: #fff;
+  padding: 40px 20px;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .site-footer {
+  background: #0a0a0a;
+}
+
+.site-footer h3,
+.site-footer h4 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.site-footer p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+  color: #ffcc00;
 }
