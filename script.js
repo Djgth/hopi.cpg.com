@@ -1,4 +1,42 @@
-// Hamburger menu toggle
+// ========================================
+// DARK/LIGHT THEME TOGGLE - ADDED
+// ========================================
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+function loadTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+    updateThemeIcon(true);
+  } else {
+    body.classList.remove('dark-mode');
+    updateThemeIcon(false);
+  }
+}
+
+function updateThemeIcon(isDark) {
+  const icon = themeToggle.querySelector('i');
+  if (isDark) {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  } else {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+  }
+}
+
+themeToggle.addEventListener('click', () => {
+  const isDarkMode = body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  updateThemeIcon(isDarkMode);
+});
+
+document.addEventListener('DOMContentLoaded', loadTheme);
+
+// ========================================
+// HAMBURGER MENU TOGGLE
+// ========================================
 const hamburger = document.getElementById('hamburger');
 const menuOverlay = document.getElementById('menuOverlay');
 
@@ -129,3 +167,5 @@ sermonAudios.forEach(audio => {
     });
   });
 });
+
+
