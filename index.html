@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="XbRaxC4HUEoRgTqQg-7R0lr1FID4IgAJnAE4R-gKq6E" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Household of Prayer International</title>
@@ -19,6 +18,7 @@
 
     <nav class="nav-links">
       <ul>
+        
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#gallery">GALLERY</a></li>
         <li><a href="#activities">ACTIVITIES</a></li>
@@ -27,6 +27,11 @@
         <li><a href="#contact">CONTACT</a></li>
       </ul>
     </nav>
+
+    <!-- Theme Toggle Button - ADDED -->
+    <button id="themeToggle" class="theme-toggle" title="Toggle Dark/Light Mode">
+      <i class="fas fa-moon"></i>
+    </button>
 
     <!-- Hamburger Button -->
     <div class="hamburger" id="hamburger">
@@ -99,16 +104,16 @@
         </p>
       </article>
 
-      <!-- Founder Card -->
-      <aside class="about-card founder-card">
-        <img src="Papa.jpg" alt="Pastor Obed Agyapong" class="founder-photo">
-        <div class="founder-body">
-          <h2 class="founder-name">Pastor Obed Agyapong</h2>
-          <p class="founder-role">Founder • Visionary Leader</p>
-          <p class="founder-text">
+     <!-- Founder Card -->
+<aside class="about-card founder-card">
+  <img src="Papa.jpg" alt="Pastor Obed Agyapong" class="founder-photo">
+  <div class="founder-body">
+    <h2 class="founder-name">Pastor Obed Agyapong</h2>
+    <p class="founder-role">Founder • Visionary Leader</p>
+    <p class="founder-text">
             Pastor Obed leads with a passion for prayer, teaching, and discipleship. His leadership has inspired many to step into their God‑given purpose.
           </p>
-          <blockquote class="founder-quote">“Raising men to fulfil their divine purpose.”</blockquote>
+          <blockquote class="founder-quote">"Raising men to fulfil their divine purpose."</blockquote>
         </div>
       </aside>
     </div>
@@ -118,8 +123,9 @@
   <!-- Gallery Section -->
   <section id="gallery" class="gallery">
     <h2>Our Gallery</h2>
-    <div class="gallery-container">
-       <div class="gallery-item">
+      <div class="gallery-container">
+
+         <div class="gallery-item">
         <img src="current 1.jpg" alt="Worship Service" loading="lazy">
       </div> <div class="gallery-item">
         <img src="current 2.jpg" alt="Worship Service" loading="lazy">
@@ -181,7 +187,7 @@
         <img src="current 30.jpg" alt="Worship Service" loading="lazy">
       </div>
       <div class="gallery-item">
-      <img src="pic 1 (2).jpg" alt="Worship Service" loading="lazy">
+        <img src="pic 1 (2).jpg" alt="Worship Service" loading="lazy">
       </div>
       <div class="gallery-item">
         <img src="pic 1 (1).jpg" alt="Community Event" loading="lazy">
@@ -270,6 +276,7 @@
         <img src="more new (17).jpg" alt="Choir Singing" loading="lazy">
       </div>
     </div>
+    </div>
   </section>
 
 
@@ -290,12 +297,12 @@
     <div class="activity-card">
       <img src="Prayer.jpg" alt="Prayer Meetings" loading="lazy">
       <h3>School of prayer</h3>
-      <p>Gathering weekly to intercede and seek God’s presence together.</p>
+      <p>Gathering weekly to intercede and seek God's presence together.</p>
     </div>
     <div class="activity-card">
       <img src="Sunday preaching.jpg" alt="Bible Studies" loading="lazy">
       <h3>Sunday service </h3>
-      <p>Diving deep into God’s Word to grow in faith and understanding.</p>
+      <p>Diving deep into God's Word to grow in faith and understanding.</p>
     </div>
     <div class="activity-card">
       <img src="sunday.jpg" alt="Special Events" loading="lazy">
@@ -351,7 +358,7 @@
     </div>
 
     <div class="department">
-      <img src="Outbreak dept.jpg" alt="Outreach Department" class="department-img">
+      <img src="Outreach dept.jpg" alt="Outreach Department" class="department-img">
       <div class="department-text">
         <h3>Outreach Department</h3>
         <p>Taking the gospel beyond the walls through evangelism and missions.</p>
@@ -398,12 +405,12 @@
 <section id="contact" class="contact">
   <div class="contact-header">
     <h2>Get In Touch</h2>
-    <p>We’d love to connect with you — whether for prayer, inquiries, or partnership.</p>
+    <p>We'd love to connect with you — whether for prayer, inquiries, or partnership.</p>
   </div>
 
   <div class="contact-wrapper">
     <!-- Contact Form -->
-    <form action="https://formspree.io/f/xzdjgnbp" method="POST" class="contact-form">
+    <form action="https://formspree.io/f/xzdjgnbp" method="POST" class="contact-form" id="contactForm">
       <h3>Send Us a Message</h3>
       <div class="form-group">
         <label for="name">Name</label>
@@ -444,6 +451,11 @@
     </div>
   </div>
 </section>
+
+
+  <!-- Welcome -->
+  <section class="welcome"></section>
+
 
  <button id="backToTop">
   <svg id="circle" width="60" height="60">
