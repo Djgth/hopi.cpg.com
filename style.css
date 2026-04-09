@@ -1778,25 +1778,32 @@ body.dark-mode .event-time {
   opacity: 1;
   transform: translateX(0);
 }
-/* Responsive calendar fix */
+/* Responsive fix for events calendar */
 @media (max-width: 600px) {
-  .calendar-container {
+  .events-calendar {
     width: 100%;
-    overflow-x: auto; /* allows horizontal scroll if needed */
+    overflow-x: auto; /* prevents site from stretching */
   }
 
-  .calendar {
+  .calendar-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* keeps days flexible */
-    font-size: 0.8rem; /* smaller text for phones */
+    grid-template-columns: repeat(7, 1fr); /* flexible days */
+    font-size: 0.8rem;
+    gap: 4px;
   }
 
-  .calendar td, .calendar th {
-    padding: 4px;
+  .calendar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
-  .upcoming-events {
+  .month-btn {
+    margin: 5px 0;
+  }
+
+  .events-container {
     padding: 10px;
   }
 }
