@@ -1804,3 +1804,104 @@ body.dark-mode .event-time {
     width: 100%;
   }
 }
+/* --- Finance Section Styles --- */
+.finance-section {
+  padding: 50px 20px;
+  background: var(--bg-color);
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.finance-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 204, 0, 0.05);
+  padding: 10px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 204, 0, 0.3);
+}
+
+.finance-title {
+  color: #ffcc00;
+  font-size: clamp(24px, 5vw, 36px);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.finance-text {
+  font-size: 18px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  color: #555;
+}
+
+body.dark-mode .finance-text {
+  color: #ccc;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.support-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.support-card:hover {
+  transform: translateY(-5px);
+}
+
+body.dark-mode .support-card {
+  background: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.support-card h3 {
+  margin-bottom: 15px;
+  color: #003366;
+}
+
+body.dark-mode .support-card h3 {
+  color: #ffcc00;
+}
+
+.support-card p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+/* --- MTN Logo Styling --- */
+.momo-logo-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.momo-logo {
+  height: 45px; /* Adjust height as needed */
+  width: auto;
+  border-radius: 8px; /* Optional: rounds the corners of the logo */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.support-card:hover .momo-logo {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Ensure the card content stays centered */
+.support-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
