@@ -1778,3 +1778,25 @@ body.dark-mode .event-time {
   opacity: 1;
   transform: translateX(0);
 }
+/* Responsive calendar fix */
+@media (max-width: 600px) {
+  .calendar-container {
+    width: 100%;
+    overflow-x: auto; /* allows horizontal scroll if needed */
+  }
+
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* keeps days flexible */
+    font-size: 0.8rem; /* smaller text for phones */
+  }
+
+  .calendar td, .calendar th {
+    padding: 4px;
+    text-align: center;
+  }
+
+  .upcoming-events {
+    padding: 10px;
+  }
+}
