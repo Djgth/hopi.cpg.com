@@ -168,4 +168,172 @@ sermonAudios.forEach(audio => {
   });
 });
 
+// ========================================
+// EVENT CALENDAR - ADDED
+// ========================================
 
+const events = [
+  { date: '2026-04-05', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-04-10', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-04-11', title: 'Victory Night', time: '5:00 PM' },
+  { date: '2026-04-12', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-04-17', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-04-19', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-04-24', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-04-26', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-05-01', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-05-03', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-05-08', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-05-10', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-05-15', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-05-17', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-05-22', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-05-24', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-05-29', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-05-31', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-06-05', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-06-07', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-06-12', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-06-14', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-06-19', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-06-21', title: 'Sunday Service', time: '5:00 PM' },
+    { date: '2026-06-26', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-06-28', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-07-03', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-07-05', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-07-10', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-07-12', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-07-17', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-07-19', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-07-24', title: 'School of Prayer', time: '7:00 PM' },
+  { date: '2026-07-26', title: 'Sunday Service', time: '5:00 PM' },
+  { date: '2026-07-31', title: 'School of Prayer', time: '7:00 PM' },
+];
+
+let currentDate = new Date();
+
+function renderCalendar() {
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
+  
+  document.getElementById('currentMonth').textContent = 
+    currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
+  const daysInMonth = lastDay.getDate();
+  const startingDayOfWeek = firstDay.getDay();
+  
+  const calendarGrid = document.getElementById('calendarGrid');
+  calendarGrid.innerHTML = '';
+  
+  // Day headers
+  const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  dayHeaders.forEach(day => {
+    const dayHeader = document.createElement('div');
+    dayHeader.textContent = day;
+    dayHeader.style.fontWeight = 'bold';
+    dayHeader.style.color = '#ffcc00';
+    dayHeader.style.padding = '10px';
+    calendarGrid.appendChild(dayHeader);
+  });
+  
+  // Empty cells before month starts
+  for (let i = 0; i < startingDayOfWeek; i++) {
+    calendarGrid.appendChild(document.createElement('div'));
+  }
+  
+  // Days of month
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dayCell = document.createElement('div');
+    dayCell.className = 'calendar-day';
+    dayCell.textContent = day;
+    
+    const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    const hasEvent = events.some(e => e.date === dateStr);
+    
+    if (hasEvent) {
+      dayCell.classList.add('event');
+    }
+    
+    const today = new Date();
+    if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+      dayCell.classList.add('today');
+    }
+    
+    calendarGrid.appendChild(dayCell);
+  }
+  
+  renderEventsList();
+}
+
+function renderEventsList() {
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
+  
+  const monthEvents = events.filter(event => {
+    const eventDate = new Date(event.date);
+    return eventDate.getMonth() === month && eventDate.getFullYear() === year;
+  }).sort((a, b) => new Date(a.date) - new Date(b.date));
+  
+  const eventsList = document.getElementById('eventsList');
+  eventsList.innerHTML = '';
+  
+  if (monthEvents.length === 0) {
+    eventsList.innerHTML = '<p style="color: #999;">No events this month</p>';
+    return;
+  }
+  
+  monthEvents.forEach(event => {
+    const eventDiv = document.createElement('div');
+    eventDiv.className = 'event-item';
+    
+    const eventDate = new Date(event.date);
+    const dateStr = eventDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    
+    eventDiv.innerHTML = `
+      <div class="event-date">${dateStr}</div>
+      <div class="event-title">${event.title}</div>
+      <div class="event-time">⏰ ${event.time}</div>
+    `;
+    
+    eventsList.appendChild(eventDiv);
+  });
+}
+
+document.getElementById('prevMonth').addEventListener('click', () => {
+  currentDate.setMonth(currentDate.getMonth() - 1);
+  renderCalendar();
+});
+
+document.getElementById('nextMonth').addEventListener('click', () => {
+  currentDate.setMonth(currentDate.getMonth() + 1);
+  renderCalendar();
+});
+
+// Initialize calendar
+if (document.getElementById('calendarGrid')) {
+  renderCalendar();
+}
+// ========================================
+// FADE-IN ON SCROLL - ADDED
+// ========================================
+
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+  fadeElements.forEach(el => observer.observe(el));
+});
