@@ -256,13 +256,13 @@
 .welcome {
   text-align: center;
   padding: 60px 20px;
-  background: #ffffff;
+  background: var(--bg-color);
   color: #003366;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 body.dark-mode .welcome {
-  background: #1a1a1a;
+  background: var(--bg-color);
   color: #ffffff;
 }
 
@@ -296,12 +296,12 @@ body.dark-mode .welcome-text p {
   justify-content: center;
   gap: 30px;
   padding: 60px 40px;
-  background: #ffffff;
+  background: var(--bg-color);
   transition: background 0.3s ease;
 }
 
 body.dark-mode .info-panels {
-  background: #1a1a1a;
+  background: var(--bg-color);
 }
 
 .panel {
