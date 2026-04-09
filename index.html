@@ -75,7 +75,7 @@
   </section>
 
   <!-- About Section -->
-<section id="about" class="about-section">
+<section id="about" class="about-section fade-in">
   <div class="about-container">
     <header class="about-header">
       <h1 class="about-title">Household of Prayer International</h1>
@@ -121,7 +121,7 @@
 </section>
 
   <!-- Gallery Section -->
-  <section id="gallery" class="gallery">
+  <section id="gallery" class="gallery fade-in">
     <h2>Our Gallery</h2>
       <div class="gallery-container">
 
@@ -281,7 +281,7 @@
 
 
   <!-- Activities Section -->
-<section id="activities" class="activities">
+<section id="activities" class="activities fade-in">
   <h2>Our Activities</h2>
   <div class="activities-grid">
     <div class="activity-card">
@@ -313,7 +313,7 @@
 </section>
 
 <!-- Departments Section -->
-<section id="departments" class="departments">
+<section id="departments" class="departments fade-in">
   <h2>Our Departments</h2>
   <div class="departments-grid">
 
@@ -358,7 +358,7 @@
     </div>
 
     <div class="department">
-      <img src="Outbreak dept.jpg" alt="Outreach Department" class="department-img">
+      <img src="Outreach dept.jpg" alt="Outreach Department" class="department-img">
       <div class="department-text">
         <h3>Outreach Department</h3>
         <p>Taking the gospel beyond the walls through evangelism and missions.</p>
@@ -385,7 +385,7 @@
 </section>
 
 <!-- Sermons Section -->
-<section id="sermons" class="sermons">
+<section id="sermons" class="sermons fade-in">
   <h2>Our Sermons</h2>
   <p class="sermons-intro">
     Explore powerful teachings and messages from our ministry. 
@@ -399,10 +399,35 @@
   </div>
 </section>
 
+<!-- Event Calendar Section -->
+<section id="events" class="events fade-in">
+  <h2>Upcoming Events</h2>
+  <div class="events-container">
+    <div class="events-calendar">
+      <div class="calendar-header">
+        <button id="prevMonth" class="month-btn">← Previous</button>
+        <h3 id="currentMonth">April 2026</h3>
+        <button id="nextMonth" class="month-btn">Next →</button>
+      </div>
+      <div class="calendar-grid" id="calendarGrid"></div>
+    </div>
+    
+    <div class="events-list">
+      <h3>Upcoming Events</h3>
+      <div id="eventsList" class="events-items">
+        <!-- Events will be populated by JavaScript -->
+      </div>
+    </div>
+  </div>
 
+    
+ 
+    </div>
+  </div>
+</section>
 
 <!-- Contact Page -->
-<section id="contact" class="contact">
+<section id="contact" class="contact fade-in">
   <div class="contact-header">
     <h2>Get In Touch</h2>
     <p>We'd love to connect with you — whether for prayer, inquiries, or partnership.</p>
@@ -516,6 +541,8 @@
       Designed by <strong style="color: #ffcc00;">Empire Digital</strong>
     </p>
   </div>
+</div>
+
   </footer>
 
   <script src="script.js"></script>
