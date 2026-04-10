@@ -1,5 +1,5 @@
 // ========================================
-// DARK/LIGHT THEME TOGGLE - ADDED
+// DARK/LIGHT THEME TOGGLE - UPDATED
 // ========================================
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
@@ -8,31 +8,26 @@ function loadTheme() {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     body.classList.add('dark-mode');
-    updateThemeIcon(true);
+    themeToggle.checked = true;
   } else {
     body.classList.remove('dark-mode');
-    updateThemeIcon(false);
+    themeToggle.checked = false;
   }
 }
 
-function updateThemeIcon(isDark) {
-  const icon = themeToggle.querySelector('i');
-  if (isDark) {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
+themeToggle.addEventListener('change', () => {
+  const isDarkMode = themeToggle.checked;
+  if (isDarkMode) {
+    body.classList.add('dark-mode');
+    localStorage.setItem('theme', 'dark');
   } else {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
+    body.classList.remove('dark-mode');
+    localStorage.setItem('theme', 'light');
   }
-}
-
-themeToggle.addEventListener('click', () => {
-  const isDarkMode = body.classList.toggle('dark-mode');
-  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  updateThemeIcon(isDarkMode);
 });
 
 document.addEventListener('DOMContentLoaded', loadTheme);
+
 
 // ========================================
 // HAMBURGER MENU TOGGLE
