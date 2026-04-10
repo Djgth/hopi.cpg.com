@@ -1935,3 +1935,25 @@ body.dark-mode .support-card h3 {
   align-items: center;
   justify-content: center;
 }
+/* Navbar logo alignment fix */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* pushes logo left, menu right */
+  align-items: center;
+  padding: 0 15px; /* add breathing room */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* forces logo to hug the left side */
+}
+
+.navbar-brand img {
+  max-height: 40px; /* keep logo size consistent */
+  margin-right: 8px; /* space between logo and text */
+}
+
+.navbar-toggler {
+  margin-left: auto; /* keeps hamburger on far right */
+}
